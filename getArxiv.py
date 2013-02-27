@@ -14,7 +14,16 @@ def sleep():
     logging.debug("Sleeping")
     time.sleep(SLEEP_TIME)
     
-    
+
+
+def resume(resumptionToken):
+    while resumptionToken is not None:
+        url = RESUME_URL + resumptionToken
+        data = readUrl(url)
+        storeData(data)
+        resumptionToken = getResumptionToken(data)
+        sleep()
+
     
 
 def getRecords(url):    
@@ -75,5 +84,11 @@ def getResumptionToken(data):
         
 if __name__ == "__main__":
     logging.basicConfig(filename = '_arXiv.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-    getRecords(BASE_URL)
+    
+    import sys
+    if len(sys.argv) > 1:
+        findex = 200
+        resume(sys.argv[1])
+    else:
+        getRecords(BASE_URL)
     logging.info("Done!")
