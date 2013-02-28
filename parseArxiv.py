@@ -8,15 +8,19 @@ COLOR_BLUE = "\033[1;34m"
 COLOR_BOLD_PURPLE='\033[1;35m'
 
 
-def makeFortune(outname = "arxiv_fortunes.txt"):
+def makeFortunes(outname = "arxiv_fortunes.txt"):
     outf = open(outname, 'w')
     records = parseAllFiles()
     
-    # lol memory
-    formattedRecords = [ format(setSpecs, paperUrl, title) for setSpecs, paperUrl, title in records]
-    
-    outf.write("\n%\n".join(formattedRecords))
+    for setSpecs, paperUrl, title in records:
+        formatted = format(setSpecs, paperUrl, title)
+        outf.write(formatted)
+        outf.write("\n%\n")
         
+    outf.write("You are a beautiful animal.")
+    outf.close()
+    
+    
     
 def format(setSpecs, paperUrl, title):
     """
@@ -32,7 +36,7 @@ def format(setSpecs, paperUrl, title):
         
     paperUrl = COLOR_BLUE + paperUrl + COLOR_OFF
     
-    title = COLOR_BOLD_PURPLE + title.replace("\n", '') + COLOR_OFF
+    title = COLOR_BOLD_PURPLE + title.replace("\n", '').replace("  ", " ") + COLOR_OFF
 
 
     return specs + "\n" + paperUrl + "\n\n" + title
@@ -42,11 +46,16 @@ def format(setSpecs, paperUrl, title):
 def parseAllFiles():
     fnames = glob("*.xml")
     
-    recs = []
+
     for fname in fnames:
-        recs.extend(parseFile(fname))
+        try:
+            recs = parseFile(fname)
+            for rec in recs:
+                yield rec
+        except:
+            print "WARNING: Error parsing file %s" % fname
     
-    return recs    
+
         
         
 def parseFile(fname):
@@ -75,10 +84,7 @@ def parseRecord(record):
     
     
 if __name__ == "__main__":
-    outf = open("TEST.txt", 'w')
-    records =  parseFile("arXiv-records-000.xml")
-    formattedRecords = [ format(setSpecs, paperUrl, title) for setSpecs, paperUrl, title in records]
-    
-    outf.write("\n%\n".join(formattedRecords))
+    makeFortunes()
+
         
     
