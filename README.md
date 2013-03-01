@@ -32,4 +32,33 @@ Then add this to your .bashrc, to have a fortune show up on new shell creation.
 
 [That will display a fortune 40% of the time.](https://en.wikipedia.org/wiki/Reinforcement#Intermittent_reinforcements)  As it stands, those fortunes come out in color.
 
+## Examples
 
+    [ math ]
+    http://arxiv.org/abs/1302.6576
+
+    Orderability, contact non-squeezing, and Rabinowitz Floer homology
+
+Or
+
+    [ physics:gr-qc ]
+    http://arxiv.org/abs/gr-qc/0208028
+
+    Possible time variations of G in scalar-tensor theories of gravity
+
+Or
+
+    [ physics:hep-lat ]
+    http://arxiv.org/abs/hep-lat/9503018
+
+    Cooling and the SU(2) Instanton Vaccuum
+
+Or 
+
+    [ cs ]
+    http://arxiv.org/abs/1011.2836
+
+    System Virtualization and Efficient ID Transmission Method for RFID Tag Infrastructure Network
+
+
+Enjoy!
