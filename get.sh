@@ -30,11 +30,11 @@ fi'
 
 SHELL_NAME=$(basename "$SHELL")
 
-if [[ "$SHELL_NAME" == "bash" && -f ~/.bashrc]] 
+if [[ "$SHELL_NAME" == "bash" && -f ~/.bashrc ]] 
 then
     echo "${COLOR_BPurple}[arxiv-fortune]${COLOR_off} Adding to ~/.bashrc"
     echo  "$RANDOM_FORTUNE_STR" >> ~/.bashrc
-elif [[ "$SHELL_NAME" == "zsh" ]]
+elif [[ "$SHELL_NAME" == "zsh" && -f ~/.zshrc ]]
 then
     echo "${COLOR_BPurple}[arxiv-fortune]${COLOR_off} Adding to ~/.zshrc"
     echo  "$RANDOM_FORTUNE_STR" >> ~/.zshrc
