@@ -2,6 +2,11 @@
 
 Peter Swire - swirepe.com
 
+----
+!curl -L https://raw.github.com/swirepe/arXiv-fortunes/master/get.sh | sh
+----
+
+
 ## What is it?
 
 You know that `fortune` program?  It's pretty much my favorite.  I usually have it deliver me quotes from Star Trek or something, I think I found something even better.
