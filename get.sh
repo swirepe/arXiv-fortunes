@@ -1,5 +1,5 @@
-COLOR_BPurple='\e[1;35m'
-COLOR_off='\e[0m'
+COLOR_BPurple='\033[1;35m'
+COLOR_off='\033[0m'
 
 _START_TIME=$(date +%s)
 echo -e 
