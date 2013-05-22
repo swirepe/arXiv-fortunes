@@ -9,9 +9,9 @@ git clone git://github.com/swirepe/arXiv-fortunes.git ~/.arxiv
 cd ~/.arxiv
 
 echo -e  "${COLOR_BPurple}[get.sh]${COLOR_off} Now removing the things you don't need."
-rm -i arxiv.tar.xz
-rm -i getArxiv.py
-rm -i parseArxiv.py
+rm arxiv.tar.xz
+rm  getArxiv.py
+rm parseArxiv.py
 unxz arxiv_fortunes.txt.xz
 
 echo -e "${COLOR_BPurple}[get.sh]${COLOR_off} This is a fortune:"

@@ -4,7 +4,7 @@ Peter Swire - swirepe.com
 
 
 ----
-    curl -L https://raw.github.com/swirepe/arXiv-fortunes/master/get.sh | sh
+    curl -L https://raw.github.com/swirepe/arXiv-fortunes/master/get.sh | bash
 ----
 
 
