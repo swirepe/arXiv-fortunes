@@ -8,6 +8,12 @@ Peter Swire - swirepe.com
 ----
 
 
+Or, for less stuff
+
+----
+    curl -L https://raw.github.com/swirepe/arXiv-fortunes/master/getShort.sh | bash
+----
+
 ## What is it?
 
 You know that `fortune` program?  It's pretty much my favorite.  I usually have it deliver me quotes from Star Trek or something, I think I found something even better.

@@ -5,7 +5,7 @@ _START_TIME=$(date +%s)
 echo -e 
 echo -e "${COLOR_BPurple}[arxiv-fortune]${COLOR_off} Cloning arxiv repository."
 pushd . > /dev/null
-git clone git://github.com/swirepe/arXiv-fortunes.git ~/.arxiv
+git clone --depth 1 git://github.com/swirepe/arXiv-fortunes.git ~/.arxiv
 cd ~/.arxiv
 
 unxz arxiv_fortunes.txt.xz
@@ -23,6 +23,9 @@ rm getArxiv.py
 rm parseArxiv.py
 rm arxiv_fortunes.txt
 rm arxiv_fortunes.txt.dat
+rm get.sh
+rm getShort.sh
+rm sample.py
 rm -rf .git
 rm -rf arxiv-pyenv
 
