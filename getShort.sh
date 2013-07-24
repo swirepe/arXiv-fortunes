@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ## ----------------------------------------------------------------------------
 ## set up error checking
 ## ----------------------------------------------------------------------------
@@ -28,6 +29,7 @@ trap 'error ${LINENO} ${$?}' ERR
 echo -e "${COLOR_BPurple}[arxiv-fortune]${COLOR_off} Checking for necessary programs."
 which bc
 which date
+which du
 which fortune
 which git
 which python
